@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отели Кахула</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hotel-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .hotel-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .hotel-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .hotel-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .hotel-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .hotel-meta {
+            display: flex;
+            align-items: center;
+            margin: 0.8rem 0;
+            color: #666;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+        
+        .hotel-meta span {
+            display: flex;
+            align-items: center;
+            margin-right: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hotel-meta i {
+            margin-right: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .price {
+            color: #27ae60;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .hotel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .amenities {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+        
+        .amenity {
+            display: flex;
+            align-items: center;
+            margin-right: 1rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            color: #555;
+        }
+        
+        .amenity i {
+            color: var(--secondary-color);
+            margin-right: 0.3rem;
+        }
+        
+        .rating {
+            display: inline-flex;
+            align-items: center;
+            background-color: #f8f9fa;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .rating i {
+            color: #f1c40f;
+            margin-right: 0.3rem;
+        }
+        
+        .btn-group {
+            margin-top: auto;
+            display: flex;
+            gap: 0.8rem;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: white;
+            flex: 1;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--secondary-color);
+            color: var(--secondary-color);
+        }
+        
+        .btn i {
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hotel-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Cahul</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="../attractions/index.html">Достопримечательности</a></li>
+                <li><a href="../restaurants/index.html">Рестораны</a></li>
+                <li><a href="#" class="active">Отели</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hotels" style="padding-top: 100px;">
+            <h2>Отели и размещение в Кахуле</h2>
+            
+            <div class="hotel-grid">
+                <!-- Карточка отеля -->
+                <div class="hotel-card">
+                    <img src="../images/hotels/hotel3.jpg" onerror="this.src='../images/placeholder.jpg'" alt="Hotel Oasis" class="hotel-img">
+                    <div class="hotel-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.6/5</span>
+                        </div>
+                        <h3>Hotel Oasis</h3>
+                        <p>Уютный отель с уникальным дизайном и индивидуальным подходом к каждому гостю.</p>
+                        
+                        <div class="amenities">
+                            <span class="amenity"><i class="fas fa-wifi"></i> Wi-Fi</span>
+                            <span class="amenity"><i class="fas fa-utensils"></i> Ресторан</span>
+                            <span class="amenity"><i class="fas fa-parking"></i> Парковка</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="hotel-card">
+                    <img src="../images/hotels/hotel1.jpg" onerror="this.src='../images/placeholder.jpg'" alt="Marco Polo" class="hotel-img">
+                    <div class="hotel-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.5/5</span>
+                        </div>
+                        <h3>Marco Polo</h3>
+                        <p>Современный отель в центре города с видом на парк. Идеальное сочетание комфорта и доступности.</p>
+                        
+                        <div class="amenities">
+                            <span class="amenity"><i class="fas fa-wifi"></i> Wi-Fi</span>
+                            <span class="amenity"><i class="fas fa-swimming-pool"></i> Бассейн</span>
+                            <span class="amenity"><i class="fas fa-utensils"></i> Ресторан</span>
+                            <span class="amenity"><i class="fas fa-parking"></i> Парковка</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="hotel-card">
+                    <img src="../images/hotels/hotel2.jpg" onerror="this.src='../images/placeholder.jpg'" alt="El Cairo" class="hotel-img">
+                    <div class="hotel-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <h3>El Cairo</h3>
+                        <div class="hotel-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> с. Крихана Веке</span>
+                            <span><i class="fas fa-phone"></i> +373 299 XX XXX</span>
+                        </div>
+                        <p>Загородный комплекс в национальном стиле с рестораном традиционной кухни. Отличное место для знакомства с молдавской культурой.</p>
+                        
+                        <div class="amenities">
+                            <div class="amenity"><i class="fas fa-wifi"></i> Wi-Fi</div>
+                            <div class="amenity"><i class="fas fa-utensils"></i> Ресторан</div>
+                            <div class="amenity"><i class="fas fa-wine-glass-alt"></i> Дегустация вин</div>
+                            <div class="amenity"><i class="fas fa-tree"></i> Сад</div>
+                            <div class="amenity"><i class="fas fa-parking"></i> Парковка</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="contact-section" style="padding: 5rem 2rem; background-color: #f9f9f9; margin-top: 4rem;">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 2.5rem; color: var(--primary-color);">Контакты</h2>
+                <div style="max-width: 800px; margin: 0 auto; background: white; padding: 2.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <div style="width: 120px; height: 120px; background: var(--secondary-color); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-user" style="font-size: 3.5rem; color: white;"></i>
+                        </div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Ion Busuioc</h3>
+                        <p style="color: #666; margin-bottom: 1.5rem;">Создатель и разработчик сайта</p>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div style="display: flex; align-items: flex-start; gap: 1rem; background: #f8f9fa; padding: 1.25rem; border-radius: 8px; transition: transform 0.3s ease;">
+                            <div style="background: var(--secondary-color); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-phone-alt" style="color: white; font-size: 1.2rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="color: #333; margin-bottom: 0.25rem; font-size: 1rem;">Телефон</h4>
+                                <a href="tel:+37378117853" style="color: #555; text-decoration: none; transition: color 0.3s ease; font-size: 1.1rem; font-weight: 500;">+373 78 11 78 53</a>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: flex-start; gap: 1rem; background: #f8f9fa; padding: 1.25rem; border-radius: 8px; transition: transform 0.3s ease;">
+                            <div style="background: var(--secondary-color); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-envelope" style="color: white; font-size: 1.2rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="color: #333; margin-bottom: 0.25rem; font-size: 1rem;">Email</h4>
+                                <a href="mailto:ionbusuioc2008@gmail.com" style="color: #555; text-decoration: none; transition: color 0.3s ease; font-size: 1.1rem; font-weight: 500;">ionbusuioc2008@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid #eee;">
+                        <p style="color: #666; margin-bottom: 1.5rem;">Свяжитесь со мной по любым вопросам, связанным с работой сайта</p>
+                        <div style="display: flex; gap: 1rem; justify-content: center;">
+                            <a href="https://wa.me/37378117853" target="_blank" style="width: 45px; height: 45px; background: #25D366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: transform 0.3s ease;">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="viber://chat?number=%2B37378117853" style="width: 45px; height: 45px; background: #7360F2; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: transform 0.3s ease;">
+                                <i class="fab fa-viber"></i>
+                            </a>
+                            <a href="mailto:ionbusuioc2008@gmail.com" style="width: 45px; height: 45px; background: #D44638; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: transform 0.3s ease;">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>О городе</h4>
+                <p>Кагул - жемчужина Южной Молдовы с богатой историей и культурным наследием</p>
+            </div>
+            <div class="footer-section">
+                <h4>Быстрые ссылки</h4>
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="../attractions/index.html">Достопримечательности</a></li>
+                    <li><a href="../restaurants/index.html">Рестораны</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Кагул. Туристический портал.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

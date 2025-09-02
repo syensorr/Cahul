@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Достопримечательности Кахула</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .attraction-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        
+        .attraction-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .attraction-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .attraction-content {
+            padding: 1.5rem;
+        }
+        
+        .attraction-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .attraction-meta {
+            display: flex;
+            align-items: center;
+            margin: 0.8rem 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .attraction-meta i {
+            margin-right: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .attraction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .attraction-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Cahul</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="#" class="active">Достопримечательности</a></li>
+                <li><a href="../restaurants/index.html">Рестораны</a></li>
+                <li><a href="../hotels/index.html">Отели</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="attractions" style="padding-top: 100px;">
+            <h2>Достопримечательности Кахула</h2>
+            
+            <div class="attraction-grid">
+                <!-- Карта достопримечательности -->
+                <div class="attraction-card">
+                    <img src="../images/attractions/attraction1.jpg" onerror="this.src='../images/placeholder.jpg'" alt="Курорт Нуфэрул Алб" class="attraction-img">
+                    <div class="attraction-content">
+                        <h3>Курорт Нуфэрул Алб</h3>
+                        <div class="attraction-meta">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>ул. Нучилор, 1</span>
+                        </div>
+                        <p>Знаменитый бальнеологический курорт с лечебными грязями и минеральными водами. Идеальное место для оздоровления и отдыха.</p>
+                    </div>
+                </div>
+
+                <div class="attraction-card">
+                    <img src="../images/attractions/attraction2.jpg" onerror="this.src='../images/placeholder.jpg'" alt="Кагульский исторический музей" class="attraction-img">
+                    <div class="attraction-content">
+                        <h3>Кагульский исторический музей</h3>
+                        <div class="attraction-meta">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>ул. Льва Толстого, 4</span>
+                        </div>
+                        <p>Музей с богатой коллекцией экспонатов, рассказывающих об истории города и региона с древнейших времен до наших дней.</p>
+                    </div>
+                </div>
+
+                <div class="attraction-card">
+                    <img src="../images/attractions/attraction3.jpg" onerror="this.src='../images/placeholder.jpg'" alt="Собор Святого Архангела Михаила" class="attraction-img">
+                    <div class="attraction-content">
+                        <h3>Собор Святого Архангела Михаила</h3>
+                        <div class="attraction-meta">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Центральный парк</span>
+                        </div>
+                        <p>Православный храм, построенный в XIX веке, является архитектурной доминантой города и важным духовным центром.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>О городе</h4>
+                <p>Кагул - жемчужина Южной Молдовы с богатой историей и культурным наследием</p>
+            </div>
+            <div class="footer-section">
+                <h4>Быстрые ссылки</h4>
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="../restaurants/index.html">Рестораны</a></li>
+                    <li><a href="../hotels/index.html">Отели</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Кагул. Туристический портал.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

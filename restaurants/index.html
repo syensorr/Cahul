@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рестораны Кахула</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .restaurant-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        
+        .restaurant-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .restaurant-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .restaurant-content {
+            padding: 1.5rem;
+        }
+        
+        .restaurant-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .restaurant-meta {
+            display: flex;
+            align-items: center;
+            margin: 0.8rem 0;
+            color: #666;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+        
+        .restaurant-meta span {
+            display: flex;
+            align-items: center;
+            margin-right: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .restaurant-meta i {
+            margin-right: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .price-level {
+            color: #f1c40f;
+        }
+        
+        .restaurant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .cuisine-tag {
+            display: inline-block;
+            background-color: #f0f0f0;
+            color: #555;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .restaurant-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Cahul</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="../attractions/index.html">Достопримечательности</a></li>
+                <li><a href="#" class="active">Рестораны</a></li>
+                <li><a href="../hotels/index.html">Отели</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="restaurants" style="padding-top: 100px;">
+            <h2>Лучшие рестораны Кахула</h2>
+            
+            <div class="restaurant-grid">
+                <!-- Карточка ресторана -->
+                <div class="restaurant-card">
+                    <img src="../images/restaurants/restaurant1.jpg" onerror="this.src='../images/placeholder.jpg'" alt="Marco Polo" class="restaurant-img">
+                    <div class="restaurant-content">
+                        <h3>Marco Polo</h3>
+                        <div class="restaurant-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> ул. Mihai Eminescu 43/2</span>
+                            <span><i class="fas fa-phone"></i> +373 0299 32 705</span>
+                            <span><i class="fas fa-euro-sign"></i> <span class="price-level">€€</span> (Средние цены)</span>
+                            <span><i class="fas fa-star"></i> 4.5/5</span>
+                        </div>
+                        <div style="margin: 1rem 0;">
+                            <span class="cuisine-tag">Молдавская кухня</span>
+                            <span class="cuisine-tag">Европейская кухня</span>
+                            <span class="cuisine-tag">Выпечка</span>
+                        </div>
+                        <p>Традиционный молдавский ресторан с уютной атмосферой и домашней кухней. Обязательно попробуйте плацинду и зама!</p>
+                        <a href="https://www.hotelmold.top/" target="_blank" class="cta-button" style="display: inline-block; margin-top: 1rem;">Перейти на Marco Polo</a>
+                    </div>
+                </div>
+
+                <div class="restaurant-card">
+                    <img src="../images/restaurants/restaurant2.jpg" onerror="this.src='../images/placeholder.jpg'" alt="Metropolis" class="restaurant-img">
+                    <div class="restaurant-content">
+                        <h3>Metropolis</h3>
+                        <div class="restaurant-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> ул. Mihai Eminescu 43/A</span>
+                            <span><i class="fas fa-phone"></i> +373 0672 70 071</span>
+                            <span><i class="fas fa-euro-sign"></i> <span class="price-level">€€€</span> (Выше среднего)</span>
+                            <span><i class="fas fa-star"></i> 4.7/5</span>
+                        </div>
+                        <div style="margin: 1rem 0;">
+                            <span class="cuisine-tag">Национальная кухня</span>
+                            <span class="cuisine-tag">Гриль</span>
+                            <span class="cuisine-tag">Винотека</span>
+                        </div>
+                        <p>Ресторан с национальным колоритом, предлагающий блюда молдавской кухни по старинным рецептам. Большой выбор местных вин.</p>
+                        <a href="https://www.instagram.com/metropolis_cahul/?hl=ru" target="_blank" class="cta-button" style="display: inline-block; margin-top: 1rem;">Instagram Metropolis</a>
+                    </div>
+                </div>
+
+                <div class="restaurant-card">
+                    <img src="../images/restaurants/restaurant3.jpg" onerror="this.src='../images/placeholder.jpg'" alt="Storys" class="restaurant-img">
+                    <div class="restaurant-content">
+                        <h3>Storys</h3>
+                        <div class="restaurant-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> ул. Calea Republicii 20/15</span>
+                            <span><i class="fas fa-phone"></i> +373 0782 20 088</span>
+                            <span><i class="fas fa-euro-sign"></i> <span class="price-level">€</span> (Недорого)</span>
+                            <span><i class="fas fa-star"></i> 4.3/5</span>
+                        </div>
+                        <div style="margin: 1rem 0;">
+                            <span class="cuisine-tag">Итальянская кухня</span>
+                            <span class="cuisine-tag">Пицца</span>
+                            <span class="cuisine-tag">Паста</span>
+                        </div>
+                        <p>Уютное кафе с вкусной пиццей из дровяной печи и другими итальянскими блюдами. Быстрое обслуживание и демократичные цены.</p>
+                        <a href="https://storys.md/ro" target="_blank" class="cta-button" style="display: inline-block; margin-top: 1rem;">Перейти на Storys</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>О городе</h4>
+                <p>Кагул - жемчужина Южной Молдовы с богатой историей и культурным наследием</p>
+            </div>
+            <div class="footer-section">
+                <h4>Быстрые ссылки</h4>
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="../attractions/index.html">Достопримечательности</a></li>
+                    <li><a href="../hotels/index.html">Отели</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Кагул. Туристический портал.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

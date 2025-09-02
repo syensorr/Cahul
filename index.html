@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кагул - Жемчужина Южной Молдовы</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Cahul</div>
+            <ul class="nav-links">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="attractions/index.html">Достопримечательности</a></li>
+                <li><a href="restaurants/index.html">Рестораны</a></li>
+                <li><a href="hotels/index.html">Отели</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Добро пожаловать в Кагул</h1>
+                <p>Откройте для себя жемчужину Южной Молдовы</p>
+                <a href="#explore" class="cta-button">Исследовать</a>
+            </div>
+        </section>
+
+        <section id="explore" class="about">
+            <h2>О городе</h2>
+            <div class="about-content">
+                <p>Кагул - уютный город на юге Молдовы, известный своими лечебными источниками, богатой историей и гостеприимными жителями. Это идеальное место для тех, кто хочет отдохнуть от городской суеты и насладиться природой.</p>
+            </div>
+        </section>
+
+        <section id="highlights">
+            <h2>Почему стоит посетить Кагул?</h2>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <i class="fas fa-umbrella-beach"></i>
+                    <h3>Лечебные курорты</h3>
+                    <p>Знаменитые грязелечебницы и минеральные источники</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Вкусная кухня</h3>
+                    <p>Насладитесь блюдами молдавской кухни</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-landmark"></i>
+                    <h3>Богатая история</h3>
+                    <p>Множество исторических мест и музеев</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>О городе</h4>
+                <p>Кагул - жемчужина Южной Молдовы с богатой историей и культурным наследием</p>
+            </div>
+            <div class="footer-section">
+                <h4>Быстрые ссылки</h4>
+                <ul>
+                    <li><a href="attractions/index.html">Достопримечательности</a></li>
+                    <li><a href="restaurants/index.html">Рестораны</a></li>
+                    <li><a href="hotels/index.html">Отели</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Кагул. Туристический портал.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for 'Исследовать' button
+        document.querySelector('a[href="#explore"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#explore').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>
