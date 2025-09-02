@@ -3,22 +3,37 @@ const navSlide = () => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');
+    const body = document.body;
     
     burger.addEventListener('click', () => {
         // Переключение навигации
-        nav.classList.toggle('nav-active');
+        nav.classList.toggle('active');
+        burger.classList.toggle('toggle');
+        
+        // Блокировка скролла при открытом меню
+        if (nav.classList.contains('active')) {
+            body.style.overflow = 'hidden';
+        } else {
+            body.style.overflow = 'auto';
+        }
         
         // Анимация ссылок
         navLinks.forEach((link, index) => {
             if (link.style.animation) {
                 link.style.animation = '';
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+            } else if (window.innerWidth <= 768) { // Только для мобильных
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.1}s`;
             }
         });
-        
-        // Анимация бургер-меню
-        burger.classList.toggle('toggle');
+    });
+    
+    // Закрытие меню при клике на ссылку
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+            burger.classList.remove('toggle');
+            body.style.overflow = 'auto';
+        });
     });
 }
 

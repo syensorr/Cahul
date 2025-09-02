@@ -197,6 +197,81 @@ h2::after {
     text-decoration: underline;
 }
 
+/* Responsive fixes */
+@media (max-width: 768px) {
+    /* Fix text overflow on mobile */
+    body {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    /* Fix menu spacing */
+    .nav-links {
+        padding: 0 15px;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: white;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .nav-links.active {
+        transform: translateX(0);
+    }
+    
+    .nav-links li {
+        width: 100%;
+        padding: 10px 20px;
+        border-bottom: 1px solid #eee;
+    }
+    
+    /* Fix contact form and email */
+    .contact-section {
+        padding: 2rem 1rem;
+    }
+    
+    .contact-section .container {
+        padding: 0 10px;
+    }
+    
+    .contact-section a[href^="mailto:"] {
+        word-break: break-all;
+        display: inline-block;
+        max-width: 100%;
+    }
+    
+    /* Fix menu button */
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+    
+    .burger div {
+        width: 25px;
+        height: 3px;
+        background-color: var(--primary-color);
+        margin: 5px;
+        transition: all 0.3s ease;
+    }
+}
+
+/* Ensure email doesn't overflow in contact section */
+.contact-section a[href^="mailto:"] {
+    word-break: break-word;
+    display: inline-block;
+    max-width: 100%;
+}
+
+/* Add padding to menu items */
+.nav-links li a {
+    padding: 0.8rem 1.2rem;
+}
+
 /* Подвал */
 footer {
     background-color: var(--primary-color);
